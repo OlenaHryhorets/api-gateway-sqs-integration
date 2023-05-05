@@ -75,7 +75,7 @@ public class ApiGatewaySqsIntegrationStack extends Stack {
   private AwsIntegration createIntegrationToSqs(Construct scope) {
     return AwsIntegration.Builder.create()
         .service("sqs")
-        .path(ACCOUNT_ID + "/" + SQS_NAME)
+        .path(ACCOUNT_ID + "/" + SQS_NAME) // replace ACCOUNT_ID with your account ID value
         .integrationHttpMethod("POST")
         .options(IntegrationOptions.builder()
             .connectionType(ConnectionType.INTERNET)
